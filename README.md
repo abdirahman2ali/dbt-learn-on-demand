@@ -1,13 +1,7 @@
-Welcome to your new dbt project!
-
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
+Greatings and welcome to my dbt project. This project is intended for my learning of dbt. Online courses are available from the dbt team to upskill analytics engineers.
 
 
-### Resources:
+### Below are some dbt resources :
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
 - Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
 - Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
