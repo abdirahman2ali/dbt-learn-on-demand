@@ -1,10 +1,14 @@
 with
 
+-- Step 1. Import CTEs
+
 source as (
 
     select * from {{ ref("orders") }}  -- this is from a seed file. This is not best practice but for learning purposes.
 
 ),
+
+-- Step 2. Final CTE
 
 transformed as (
 
@@ -26,5 +30,7 @@ transformed as (
 
     from source
 )
+
+--- Step 3. Select Statement
 
 select * from transformed

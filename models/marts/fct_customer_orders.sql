@@ -74,6 +74,7 @@ final_cte as (
         customers.surname,
         customers.givenname,
         first_order_date,
+        last_order_date,
         order_count,
         total_lifetime_value,
         orders.order_value_dollars,

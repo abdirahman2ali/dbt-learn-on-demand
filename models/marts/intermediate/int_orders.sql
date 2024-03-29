@@ -1,5 +1,7 @@
 with 
 
+-- Step 1. Import CTEs
+
 orders as (
 
     select * from {{ref("stg_jaffle_shop_orders")}}
@@ -9,22 +11,28 @@ orders as (
 payments as (
 
     select * from {{ref("stg_stripe_payments")}}
-    where payment_status != 'fail'
+    where payment_status != 'fail' -- exclude any orders with status that failed.
 
 ),
 
+-- Step 2. Build the Logical CTEs
+
 orders_totals as (
+
+--  This CTE is calculating the total order amount per order by status.
 
     select
 
         order_id,
         payment_status,
-        sum(payment_amount) as order_value_dollars
+        sum(payment_amount) as order_value_dollars 
 
     from payments
     group by 1,2
 
 ),
+
+--- Step 3. Build final CTEs
 
 final_cte as (
 
@@ -39,5 +47,7 @@ final_cte as (
         on orders.order_id and orders_totals.order_id
 
 )
+
+--- Step 4. Select Statement
 
 select * from final_cte
