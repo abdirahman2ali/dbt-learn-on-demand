@@ -25,8 +25,6 @@ customer_order_history as (
         customers.givenname,
         customers.full_name, 
 
-        min(orders.order_date) as first_order_date,
-
         min(orders.valid_order_date) as first_order_date,
 
         max(orders.valid_order_date) as last_order_date,

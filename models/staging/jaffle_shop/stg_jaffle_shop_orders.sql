@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ ref('orders') }}  -- this is from a seed file. This is not best practice but for learning purposes.
+    select * from {{ ref("orders") }}  -- this is from a seed file. This is not best practice but for learning purposes.
 
 ),
 
@@ -13,9 +13,9 @@ transformed as (
         user_id as customer_id,
         order_date,
         status as order_status,
-        
+
         case 
-            when orders.order_status not in ('returned','return_pending') 
+            when status not in ('returned','return_pending') 
             then order_date 
         end as valid_order_date,
 
