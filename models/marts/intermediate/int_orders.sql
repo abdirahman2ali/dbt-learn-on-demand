@@ -44,10 +44,10 @@ final_cte as (
 
     from orders
     left join orders_totals
-        on orders.order_id and orders_totals.order_id
+        on orders.order_id = orders_totals.order_id
 
 )
 
 --- Step 4. Select Statement
 
-select * from final_cte
+select * from final_cte 
