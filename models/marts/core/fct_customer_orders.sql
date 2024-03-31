@@ -14,7 +14,7 @@ customers as (
 
 ),
 
---- Step 2. Logic
+--- Step 2. Building Logic CTE
 
 customer_orders as (
 
