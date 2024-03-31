@@ -1,3 +1,4 @@
+{{ config(materialized = 'table')}}
 {%- set payment_method = ['bank_transfer', 'coupon', 'credit_card', 'gift_card'] -%}
 
 with

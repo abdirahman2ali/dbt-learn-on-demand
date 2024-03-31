@@ -1,3 +1,5 @@
+{{ config(materialized = 'view')}}
+
 with 
 
 -- Step 1. Import CTEs
