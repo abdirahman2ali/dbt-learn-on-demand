@@ -32,7 +32,9 @@ models:
       - name: customer_id
         description: A confidential number used to identify a particular user.
         tests:
-          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
   
 
       
