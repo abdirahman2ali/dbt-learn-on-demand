@@ -12,5 +12,15 @@ models:
       - name: customer_id
         tests:
           - not_null
+  - name: int_orders_pivoted
+    description: ''
+    columns:
+      - name: order_id
+        description: The primary key for the int_orders_pivoted
+        tests:
+          - relationships:
+              to: ref('fct_customer_orders')
+              field: order_id
+      
           
         
