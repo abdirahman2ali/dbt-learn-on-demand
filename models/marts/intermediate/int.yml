@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: int_orders
-    description: one row per order that excludes any failed orders. 
+    description: '{{ doc("int_orders") }}' 
     columns:
       - name: order_id
         description: The primary key for int_orders.

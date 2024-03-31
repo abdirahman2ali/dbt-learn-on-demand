@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: fct_customer_orders
-    description: One row per order. This view joins customers table to identify customers that purchased and other metrics (lifetime, etc) 
+    description:  '{{ doc("fct_customer_orders") }}'
     columns:
       - name: order_id
         description: The primary key for fct_customer_orders.
