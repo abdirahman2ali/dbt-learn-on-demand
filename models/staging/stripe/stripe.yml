@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_payments
+    description: one row per payment method ID. 
+    columns:
+      - name: payment_id
+        description: The primary key for stg_payments.
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        tests:
+          - not_null
+          
+        
