@@ -13,7 +13,7 @@ models:
         tests:
           - not_null
   - name: int_orders_pivoted
-    description: ''
+    description: '{{ doc("int_orders_pivoted") }}'
     columns:
       - name: order_id
         description: The primary key for the int_orders_pivoted
@@ -22,5 +22,14 @@ models:
               to: ref('fct_customer_orders')
               field: order_id
       
+  - name: customer_daily_summary
+    description: '{{ doc("customer_daily_summary") }}'
+    columns:
+      - name: id
+        description: The primary key for the customer_daily_summary
+        tests:
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
           
         
