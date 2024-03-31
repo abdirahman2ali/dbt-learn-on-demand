@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: fct_customer_orders
+    description: One row per order. This view joins customers table to identify customers that purchased and other metrics (lifetime, etc) 
+    columns:
+      - name: order_id
+        description: The primary key for fct_customer_orders.
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+          
+        

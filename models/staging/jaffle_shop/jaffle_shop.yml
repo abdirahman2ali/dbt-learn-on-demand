@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: '{{ doc("stg_customers") }}'
+    columns:
+      - name: customer_id
+        description: A confidential number used to identify a particular user.
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    description: '{{ doc("stg_orders") }}'
+    columns:
+      - name: order_id
+        descriptions: A confidential number used to identify user purchase.
+        tests:
+          - unique
+          - not_null
+  
+      - name: order_status
+        tests:
+          - accepted_values:
+              values: 
+                - shipped
+                - completed
+                - return_pending
+                - returned
+                - placed
+
+      - name: customer_id
+        description: A confidential number used to identify a particular user.
+        tests:
+          - not_null
+  
+
+      
+    

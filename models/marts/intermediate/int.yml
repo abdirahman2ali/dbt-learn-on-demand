@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: int_orders
+    description: one row per order that excludes any failed orders. 
+    columns:
+      - name: order_id
+        description: The primary key for int_orders.
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+          
+        
