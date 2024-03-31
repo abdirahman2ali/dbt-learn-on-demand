@@ -1,3 +1,5 @@
+{{ config(materialized = 'table')}}
+
 with 
 
 --- Step 1. Import CTEs
